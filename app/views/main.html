@@ -1,5 +1,31 @@
-<div class="container">
-  <div ng-repeat="book in books">
-    {{ book.title }}
+<div class="book-collection" ng-repeat="book in store.books">
+  <div class="list item" ng-click="store.setActive(book.id)" ng-hide="store.isActive(book.id)">
+    <div class="image thumbnail">
+      <img data-src="holder.js/40x50/random">
+    </div>
+    <div class="description">
+      {{ book.title }}
+    </div>
+  </div>
+
+  <div class="list active item" ng-show="store.isActive(book.id)">
+      <div class="image thumbnail">
+        <img data-src="holder.js/120x150/random">
+      </div>
+
+      <div class="description">
+        <p class="author">
+          <strong>{{ book.title }}</strong><br/>
+          von {{ book.author}}
+        </p>
+
+        <p class="isbn">
+          {{ book.isbn }}
+        </p>
+
+        <p class="rating">
+          {{ book.rating }}
+        </p>
+      </div>
   </div>
 </div>
