@@ -1,17 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name bookstoreAngularApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the bookstoreAngularApp
- */
 angular.module('bookstoreAngularApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('BookstoreCtrl', function ($scope) {
+    $scope.books = [{title: 'Book 1', author: 'Author 1'},
+                    {title: 'Book 2', author: 'Author 2'},
+                    {title: 'Book 3', author: 'Author 3'}];
+
+
   });
