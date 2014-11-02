@@ -93,6 +93,11 @@ div .add-book {
           padding-top: 20px;
           margin-left: 20px;
         }
+
+        .remove {
+          display: inline-block !important;
+          float: right;
+        }
       }
     }
   }
