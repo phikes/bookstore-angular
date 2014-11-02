@@ -38,6 +38,12 @@ app.controller('BookstoreCtrl', function($http) {
       store.books.push(store.newBook);
       store.newBook = {};
     };
+
+    this.removeBook = function(book) {
+      var index = store.books.indexOf(book);
+      store.active = store.books[index + 1].id;
+      store.books.splice(index, 1);
+    };
 });
 
 app.directive('clickAnywhereButHere', function($document) {

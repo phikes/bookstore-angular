@@ -9,23 +9,29 @@
   </div>
 
   <div class="list active item" ng-show="store.isActive(book.id)">
-      <div class="image thumbnail">
-        <img data-src="holder.js/120x150/random">
-      </div>
+    <div class="image thumbnail">
+      <img data-src="holder.js/120x150/random">
+    </div>
 
-      <div class="description">
-        <p class="author">
-          <strong>{{ book.title }}</strong><br/>
-          von {{ book.author}}
-        </p>
+    <div class="description">
+      <p class="author">
+        <strong>{{ book.title }}</strong><br/>
+        von {{ book.author}}
+      </p>
 
-        <p class="isbn">
-          {{ book.isbn }}
-        </p>
+      <p class="isbn">
+        {{ book.isbn }}
+      </p>
 
-        <p class="rating">
-          {{ book.rating }}
-        </p>
-      </div>
+      <p class="rating">
+        {{ book.rating }}
+      </p>
+    </div>
+
+    <div class="remove">
+      <button type="button" class="btn btn-default btn-lg" ng-click="store.removeBook(book)">
+        <span class="glyphicon glyphicon-remove"></span> Entfernen
+      </button>
+    </div>
   </div>
 </div>
