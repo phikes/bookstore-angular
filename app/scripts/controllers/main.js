@@ -2,9 +2,15 @@
 
 var app = angular.module('bookstoreAngularApp');
 
+app.controller('MainCtrl', function() {
+  var main = this;
+  main.hover = false;
+});
+
 app.controller('BookstoreCtrl', function($http) {
   var store = this;
   store.books = [];
+  store.newBook = {};
   store.active = 1;
 
   $http.get('http://localhost:3000/books')
@@ -27,7 +33,25 @@ app.controller('BookstoreCtrl', function($http) {
       return store.active === listElement;
     };
 
-    this.addBook = function(newBook) {
-      store.books.push(newBook);
+    this.addBook = function() {
+      store.newBook.id = store.books[store.books.length - 1].id + 1;
+      store.books.push(store.newBook);
+      store.newBook = {};
     };
+});
+
+app.directive('clickAnywhereButHere', function($document) {
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attr) {
+      elem.bind('click', function(e) {
+        // this part keeps it from firing the click on the document.
+        e.stopPropagation();
+      });
+      $document.bind('click', function() {
+        // magic here.
+        scope.$apply(attr.clickAnywhereButHere);
+      });
+    }
+  };
 });
