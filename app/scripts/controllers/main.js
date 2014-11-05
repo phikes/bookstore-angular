@@ -40,24 +40,25 @@ app.controller('BookstoreCtrl', function($http) {
     };
 
     this.removeBook = function(book) {
+      // TODO: LETZTES BUCH LÖSCHEN
       var index = store.books.indexOf(book);
       store.active = store.books[index + 1].id;
       store.books.splice(index, 1);
     };
 });
 
-app.directive('clickAnywhereButHere', function($document) {
-  return {
-    restrict: 'A',
-    link: function(scope, elem, attr) {
-      elem.bind('click', function(e) {
-        // this part keeps it from firing the click on the document.
-        e.stopPropagation();
-      });
-      $document.bind('click', function() {
-        // magic here.
-        scope.$apply(attr.clickAnywhereButHere);
-      });
-    }
-  };
-});
+// app.directive('clickAnywhereButHere', function($document) {
+//   return {
+//     restrict: 'A',
+//     link: function(scope, elem, attr) {
+//       elem.bind('click', function(e) {
+//         // this part keeps it from firing the click on the document.
+//         e.stopPropagation();
+//       });
+//       $document.bind('click', function() {
+//         // magic here.
+//         scope.$apply(attr.clickAnywhereButHere);
+//       });
+//     }
+//   };
+// });
