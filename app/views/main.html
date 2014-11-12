@@ -1,7 +1,7 @@
 <div class="book-collection" ng-repeat="book in store.books">
   <div class="list item" ng-click="store.setActive(book.id)" ng-hide="store.isActive(book.id)">
     <div class="image thumbnail">
-      <img data-src="holder.js/40x50/random">
+      <img data-src="holder.js/40x50/random" holder-fix>
     </div>
     <div class="description">
       {{ book.title }}
@@ -10,7 +10,7 @@
 
   <div class="list active item" ng-show="store.isActive(book.id)">
     <div class="image thumbnail">
-      <img data-src="holder.js/120x150/random">
+      <img data-src="holder.js/120x150/random" holder-fix>
     </div>
 
     <div class="description">
