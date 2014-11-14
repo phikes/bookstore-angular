@@ -32,6 +32,8 @@ app.controller('BookstoreCtrl', function($http, $resource) {
       store.books.push(returnedBook);
     }
 
+    store.active = returnedBook.id
+
     //store.newBook.id = store.books[store.books.length - 1].id + 1;
     store.newBook = {};
   };
@@ -39,7 +41,12 @@ app.controller('BookstoreCtrl', function($http, $resource) {
   this.removeBook = function(book) {
     // TODO: LETZTES BUCH LÖSCHEN
     var index = store.books.indexOf(book);
-    store.active = store.books[index + 1].id;
+    if(store.books.length === 1) {
+      store.active = 0;
+    }
+    else {
+      store.active = store.books[index + 1].id;
+    }
     store.books.splice(index, 1);
   };
 });
