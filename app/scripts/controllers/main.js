@@ -2,12 +2,27 @@
 
 var app = angular.module('bookstoreAngularApp');
 
-app.controller('MainCtrl', function() {
+app.controller('MainCtrl', function(hotkeys) {
   var main = this;
   main.hover = false;
+
+  hotkeys.add({
+    combo: 'ctrl+1',
+    description: 'Öffnet bzw. schließt das Formular zum Hinzufügen eines Buches',
+    callback: function() {
+      main.hover = !main.hover;
+    }
+  });
+  hotkeys.add({
+    combo: '8 8',
+    description: 'Sequence Test',
+    callback: function() {
+      console.log('Sequence test passed!')
+    }
+  });
 });
 
-app.controller('BookstoreCtrl', function($http, $resource) {
+app.controller('BookstoreCtrl', function($http, $resource, hotkeys) {
   var Book = $resource('http://localhost:3000/books/:id', {id: '@id'});
 
   var store = this;

@@ -7,7 +7,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'cfp.hotkeys'
   ])
   .config(function ($routeProvider) {
     $routeProvider
