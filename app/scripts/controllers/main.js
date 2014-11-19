@@ -59,9 +59,13 @@ app.controller('BookstoreCtrl', function($http, $resource, hotkeys) {
     if(store.books.length === 1) {
       store.active = 0;
     }
-    else {
+    else if(store.books[index + 1]) {
       store.active = store.books[index + 1].id;
     }
+    else {
+      store.active = store.books[index - 1].id;
+    }
+
     store.books.splice(index, 1);
   };
 });
