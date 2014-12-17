@@ -1,5 +1,5 @@
-<div class="book-collection" ng-repeat="book in store.books">
-  <div class="list item" ng-click="store.setActive(book.id)" ng-hide="store.isActive(book.id)">
+<div class="book-collection" ng-repeat="book in books">
+  <div class="list item" ng-click="setActive(book.id)" ng-hide="isActive(book.id)">
     <div class="image thumbnail">
       <img data-src="holder.js/40x50/random" holder-fix>
     </div>
@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="list active item" ng-show="store.isActive(book.id)">
+  <div class="list active item" ng-show="isActive(book.id)">
     <div class="image thumbnail">
       <img data-src="holder.js/120x150/random" holder-fix>
     </div>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="remove">
-      <button type="button" class="btn btn-danger btn-xs" ng-click="store.removeBook(book)">
+      <button type="button" class="btn btn-danger btn-xs" ng-click="removeBook(book)">
         <span class="glyphicon glyphicon-remove"></span> Entfernen
       </button>
     </div>

@@ -23,72 +23,64 @@ app.controller('MainCtrl', function(hotkeys) {
 });
 
 app.controller('BookstoreCtrl', function($http, $resource, $scope, hotkeys) {
-  var Book = $resource('/api/books/:id', {id: '@id'});
+  var Book = $resource('http://localhost:3000/api/books/:id', {id: '@id'});
 
-  var store = this;
-  store.books = Book.query();
-  store.newBook = {};
-  store.active = 1;
+  //var store = this;
+  $scope.books = Book.query();
+  $scope.newBook = {};
+  $scope.active = 1;
 
-  store.setActive = function(newActive) {
-    store.active = newActive;
+  $scope.setActive = function(newActive) {
+    $scope.active = newActive;
   };
 
-  store.isActive = function(listElement) {
-    return store.active === listElement;
+  $scope.isActive = function(listElement) {
+    return $scope.active === listElement;
   };
 
-  store.addBook = function() {
-    //var returnedBook = Book.save(store.newBook);
-    //store.books.push(returnedBook);
-    //store.active = returnedBook.id
-    //store.newBook.id = store.books[store.books.length - 1].id + 1;
+  $scope.addBook = function() {
+    //var returnedBook = Book.save($scope.newBook);
+    //$scope.books.push(returnedBook);
+    //$scope.active = returnedBook.id
+    //$scope.newBook.id = $scope.books[$scope.books.length - 1].id + 1;
     
-    store.books.push({title: 'cancer', author: 'attack', isbn: '12345', rating: 4, id: 4});
-    //console.log(store.newBook);
-    store.newBook = {};
+    $scope.books.push({title: 'cancer', author: 'attack', isbn: '12345', rating: 4, id: 4});
+    //console.log($scope.newBook);
+    $scope.newBook = {};
   };
 
-  store.removeBook = function(book) {
-    var index = store.books.indexOf(book);
-    if(store.books.length === 1) {
-      store.active = 0;
+  $scope.removeBook = function(book) {
+    var index = $scope.books.indexOf(book);
+    if($scope.books.length === 1) {
+      $scope.active = 0;
     }
-    else if(store.books[index + 1]) {
-      store.active = store.books[index + 1].id;
+    else if($scope.books[index + 1]) {
+      $scope.active = $scope.books[index + 1].id;
     }
     else {
-      store.active = store.books[index - 1].id;
+      $scope.active = $scope.books[index - 1].id;
     }
 
-    store.books.splice(index, 1);
+    $scope.books.splice(index, 1);
   };
 
-  store.removeActiveBook = function() {
-    var index = store.books.indexOf($.grep(store.books, function (element) {
-        return element.id === store.active;
+  $scope.removeActiveBook = function() {
+    var index = $scope.books.indexOf($.grep($scope.books, function (element) {
+        return element.id === $scope.active;
     })[0]);
 
-    if(store.books.length === 1) {
-      store.active = 0;
+    if($scope.books.length === 1) {
+      $scope.active = 0;
     }
-    else if(store.books[index + 1]) {
-      store.active = store.books[index + 1].id;
+    else if($scope.books[index + 1]) {
+      $scope.active = $scope.books[index + 1].id;
     }
     else {
-      store.active = store.books[index - 1].id;
+      $scope.active = $scope.books[index - 1].id;
     }
 
-    store.books.splice(index, 1);
+    $scope.books.splice(index, 1);
   };
-
-  hotkeys.add({
-    combo: 'ctrl+2',
-    description: 'Remove Book',
-    callback: function() {
-      store.removeActiveBook();
-    }
-  });
 });
 
 app.directive('holderFix', function () {
