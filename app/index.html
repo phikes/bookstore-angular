@@ -9,11 +9,11 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/angular-hotkeys/build/hotkeys.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/application.css">
     <!-- endbuild -->
   </head>
   <body ng-app="bookstoreAngularApp">
@@ -22,8 +22,8 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-controller="BookstoreCtrl as store">
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="MainCtrl as main">
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">
@@ -31,16 +31,15 @@
               <span>bookstore</span>
             </a>
           </div>
-          
-          <div class="collapse navbar-collapse navbar-right"
-          ng-mouseenter="main.hover = true" ng-mouseleave="main.hover = false">
+
+          <div class="collapse navbar-collapse navbar-right" ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+            ng-controller="BooksIndexController">
             <ul class="nav navbar-nav">
-              <li ng-class="{active: main.hover}"><a href="">+ Buch</a>
-              </li>
+              <li ng-class="{active: hover}"><a href="">+ Buch</a></li>
             </ul>
 
-            <div class="add-book container img-rounded" ng-show="main.hover">
-              <form role="form" ng-submit="addBook()">
+            <div class="add-book container img-rounded" ng-show="hover">
+              <form role="form" ng-submit="createBook()">
                 <div class="form-group">
                   <label for="title">Titel</label>
                   <input type="text" ng-model="newBook.title" class="form-control" id="title" placeholder="Titel">
@@ -64,11 +63,17 @@
         </div>
       </nav>
 
-      <div class="header">
-        <h3 class="text-muted">Meine Sammlung</h3>
+      <div class="alert alert-success" role="alert" ng-show="flash.getMessage()" ng-controller="FlashController">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <ul>
+          <li>{{flash.getMessage()}}</li>
+        </ul>
       </div>
 
-      <div ng-view=""></div>
+      <div ui-view=""></div>
     </div>
 
     <!-- build:js(.) scripts/oldieshim.js -->
@@ -77,8 +82,6 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
-
-    <script src="bower_components/holderjs/holder.js"></script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -91,13 +94,17 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-hotkeys/build/hotkeys.min.js"></script>
+    <script src="bower_components/holderjs/holder.js"></script>
+    <script src="bower_components/angular-rails-resource/angularjs-rails-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/controllers/BooksController.js"></script>
     <!-- endbuild -->
 </body>
 </html>

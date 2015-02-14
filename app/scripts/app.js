@@ -8,15 +8,13 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'cfp.hotkeys'
+    'ui.router',
+    'bookstoreAngularApp.controllers', 'bookstoreAngularApp.directives', 'bookstoreAngularApp.services'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'BookstoreCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider.state('books', {
+      url: '/', templateUrl: 'views/books/index.html', controller: 'BooksController'
+    });
+
+    $urlRouterProvider.otherwise('/');
   });
