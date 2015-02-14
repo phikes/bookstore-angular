@@ -2,3 +2,9 @@ Bookstore Frontend:
  ☐ Highlight new Book after creation @Design
  ☐ Animate activation of book @Design
  ☐ Use CoffeeScript @JavaScript @CoffeeScript
+
+Controllers:
+ ☐ Book Creation Error @Logic
+
+Ideas:
+  ☐ Do not reload after  CRUD actions
