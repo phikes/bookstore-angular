@@ -2,7 +2,7 @@
   <h3 class="text-muted">Meine Sammlung</h3>
 </div>
 
-<div class="book-collection" ng-repeat="book in books">
+<div class="book-collection" ng-repeat="book in books" on-finish-render="ngRepeatFinished">
   <div class="list item" ng-click="setActive(book.id)" ng-hide="isActive(book.id)">
     <div class="image thumbnail">
       <img data-src="holder.js/40x50/random" holder-fix>
@@ -27,8 +27,12 @@
         {{ book.isbn }}
       </p>
 
-      <p class="rating">
-        {{ book.rating }}
+      <p class="bootstrap-star-rating">
+        <input class="star-rating" type="number" class="rating" value={{book.rating}}>
+      </p>
+
+      <p class="bootstrap-ui-rating">
+        <rating ng-model="book.rating" on-leave="updateBook(book)"></rating>
       </p>
     </div>
 

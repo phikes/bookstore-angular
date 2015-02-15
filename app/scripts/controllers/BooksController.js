@@ -14,6 +14,16 @@ app.controller('BooksController', function($scope, $state, $stateParams, flash, 
     console.log('Get Error');
   });
 
+  $scope.$on('ngRepeatFinished', function() {
+    $('.star-rating').rating({
+      min: 0, max: 5, step: 1, size: 'xs', showCaption: false, showClear: false
+    });
+
+    $('.star-rating').on('rating.change', function(event, value) {
+      console.log(value);
+    });
+  });
+
   $scope.setActive = function(newActive) {
     $scope.active = newActive;
   };
@@ -25,6 +35,14 @@ app.controller('BooksController', function($scope, $state, $stateParams, flash, 
     book.delete().then(function() {
       flash.setMessage('Buch wurde entfernt!');
       $state.go($state.current, {}, {reload: true});
+    });
+  };
+
+  $scope.updateBook = function(book) {
+    book.update().then(function() {
+      console.log('worked');
+    }, function() {
+      console.log('didnt work');
     });
   };
 });
