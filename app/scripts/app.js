@@ -8,7 +8,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router',
+    'ui.router', 'ui.bootstrap',
     'bookstoreAngularApp.controllers', 'bookstoreAngularApp.directives', 'bookstoreAngularApp.services'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
