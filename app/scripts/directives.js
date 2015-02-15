@@ -23,3 +23,16 @@ app.directive('hoverOpenDirective', function() {
     }
   };
 });
+
+app.directive('onFinishRender', function ($timeout) {
+  return {
+    restrict: 'A',
+    link: function (scope) {
+      if (scope.$last === true) {
+        $timeout(function () {
+          scope.$emit('ngRepeatFinished');
+        });
+      }
+    }
+  };
+});
