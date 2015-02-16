@@ -43,7 +43,7 @@ app.controller('BooksController', function($scope, $state, $stateParams, flash, 
   };
 });
 
-app.controller('BooksIndexController', function($scope, $state, $stateParams, flash, Book) {
+app.controller('BooksCreateController', function($scope, $state, $stateParams, flash, Book) {
   $scope.flash = flash;
   $scope.hover = false;
   $scope.newBook = {};
