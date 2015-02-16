@@ -18,12 +18,12 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
-  
+
   "globals": {
     "angular": false,
     "Holder": false,
     "$": false,
     "jQuery": false,
-    "app": false
+    "app": true
   }
 }
