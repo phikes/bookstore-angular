@@ -6,21 +6,23 @@ Bookstore Frontend:
    ✘ Implement Bootstrap-Ui Star Rating @cancelled (15-02-15 18:31) (see below section Star Rating)
 
 Controllers:
-  ☐ Add a Book-Creation Error @Logic @DataTransfer
-  ☐ Add useful Book-Update Messages @Logic @DataTransfer
+   ☐ Add Error Flash
+     ☐ Add a Book-Creation Error @Logic @DataTransfer
+     ☐ Add useful Book-Update Messages @Logic @DataTransfer
 
  Star Rating:
      Options:
          ✔ Bootstrap Star Rating @done (15-02-15 18:19)
-             ☐ Implement Update Functionality on 'rating.cange'
              // Why is event 'rating.change' fired two times after switching from id to class star-rating?
-             // PRO: Icons really beautiful imo, step=0.5 possible
+             // PRO: Icons really beautiful imo, step=0.5 possible, Easy to update with ng-change
+             ✘ Implement Update Functionality on 'rating.cange' @cancelled (15-02-16 20:51)
+             ✔ Implement Update Functionality on ngChange! @done (15-02-16 20:51)
          ✔ Bootstrap-UI Rating @done (15-02-15 18:26)
              // PRO: Easy to update book, Icons changeable view state-on/state-off
              // CON: update on-leave?, Blue box on click
-            ☐ Implement update on click instead of on-leave
-         ☐ jQuery Raty
+            ✔ Implement update on click instead of on-leave @done (15-02-16 20:53)
+         ☐ jQuery Raty?
              // Looks simple and leightweight
 
 Ideas:
-  ☐ Do not reload after  CRUD actions
+  ☐ Do not reload page after CRUD actions
