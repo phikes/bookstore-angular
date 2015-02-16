@@ -18,10 +18,6 @@ app.controller('BooksController', function($scope, $state, $stateParams, flash, 
     $('.star-rating').rating({
       min: 0, max: 5, step: 1, size: 'xs', showCaption: false, showClear: false
     });
-
-    $('.star-rating').on('rating.change', function(event, value) {
-      console.log(value);
-    });
   });
 
   $scope.setActive = function(newActive) {

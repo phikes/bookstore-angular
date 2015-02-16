@@ -28,11 +28,11 @@
       </p>
 
       <p class="bootstrap-star-rating">
-        <input class="star-rating" type="number" class="rating" value={{book.rating}}>
+        <input class="star-rating" type="number" class="rating" ng-model="book.rating" ng-change="updateBook(book)">
       </p>
 
       <p class="bootstrap-ui-rating">
-        <rating ng-model="book.rating" on-leave="updateBook(book)"></rating>
+        <rating ng-model="book.rating" ng-click="updateBook(book)"></rating>
       </p>
     </div>
 
