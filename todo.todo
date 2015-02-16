@@ -32,5 +32,10 @@ Bookstore:
       ☐ jQuery Raty?
         // Looks simple and leightweight
 
-  Ideas:
-    ☐ Do not reload page after CRUD actions
+  Discussion + Ideas:
+    ☐ Reload page after CRUD actions?
+      // I'm for not doing it and highlighting the newly created book
+    ☐ Which Star Rating?
+       ☐ Empty dots for empty stars (a la iTunes)?
+
+
