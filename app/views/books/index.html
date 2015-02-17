@@ -3,12 +3,16 @@
 </div>
 
 <div class="book-collection" ng-repeat="book in books" on-finish-render="ngRepeatFinished">
-  <div class="list item" ng-click="setActive(book.id)" ng-hide="isActive(book.id)">
+  <div class="list inactive item" ng-click="setActive(book.id)" ng-hide="isActive(book.id)">
     <div class="image thumbnail">
       <img data-src="holder.js/40x50/random" holder-fix>
     </div>
     <div class="description">
-      {{ book.title }}
+      <span class="author">{{book.author}}: </span>
+      <span class="title">{{book.title}}</span>
+    </div>
+    <div class="bootstrap-star-rating">
+      <input class="inactive-star-rating" type="number" class="rating" ng-model="book.rating">
     </div>
   </div>
 
@@ -19,8 +23,8 @@
 
     <div class="description">
       <p class="author">
-        <strong>{{ book.title }}</strong><br/>
-        von {{ book.author}}
+        <span class="title">{{book.title}}</span>
+        <span class="author">von {{book.author}}</span>
       </p>
 
       <p class="isbn">
@@ -28,7 +32,7 @@
       </p>
 
       <p class="bootstrap-star-rating">
-        <input class="star-rating" type="number" class="rating" ng-model="book.rating" ng-change="updateBook(book)">
+        <input class="star-rating" type="number" ng-model="book.rating" ng-change="updateBook(book)">
       </p>
 
       <p class="bootstrap-ui-rating">
