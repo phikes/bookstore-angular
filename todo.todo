@@ -1,7 +1,7 @@
 Bookstore:
   ☐ Automatically include new source files @NeedHelp
   ✔ Use CoffeeScript @JavaScript @CoffeeScript @CleanCode @done (15-02-17 00:13)
-    ☐ CoffeeScript for BooksController @JavaScript @CoffeeScript @CleanCode @high
+    ☐ CoffeeScript for BooksController @JavaScript @CoffeeScript @CleanCode @WhyYouNotWork @high
   ☐ Use HAML @CleanCode @NeedHelp
   ☐ Choose a beautiful font @Design @Discussion @critical
   ☐ Choose a beautiful background texture @Design @Discussion @critical
@@ -47,4 +47,4 @@ Bookstore:
     ☐ What to do with overflowing text?
     ☐ 0.5 steps ratings would be really good @Backend @Database
     ☐ Font + Background
-    ☐ Usage of timeout?
+    ☐ Usage of timeout? @critical
