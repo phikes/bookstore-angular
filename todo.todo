@@ -1,17 +1,17 @@
 Bookstore:
   ☐ Automatically include new source files @NeedHelp
   ✔ Use CoffeeScript @JavaScript @CoffeeScript @CleanCode @done (15-02-17 00:13)
-    ☐ CoffeeScript for BooksController @JavaScript @CoffeeScript @CleanCode
+    ☐ CoffeeScript for BooksController @JavaScript @CoffeeScript @CleanCode @high
   ☐ Use HAML @CleanCode @NeedHelp
-  ☐ Choose a beautiful font @Design @critical
-  ☐ Choose a beautiful background texture @Design @critical
+  ☐ Choose a beautiful font @Design @Discussion @critical
+  ☐ Choose a beautiful background texture @Design @Discussion @critical
 
   Frontend:
     ☐ Add indicator that inactive items can be opened @Clarity @Design
-    ☐ Highlight new Book after creation @Design
+    ☐ Highlight new Book after creation @Clarity @Design @Discussion
     ☐ Animate activation of book @Design
     ✘ Implement Bootstrap-Ui Star Rating @cancelled (15-02-15 18:31) (see below section Star Rating)
-    ☐ Hovering over a book image should change the color of the div (or body) @Design
+    ☐ Hovering over a book image should change the color of the div (or body) @Design @Discussion
     ✔ Add some flavor to the book description @Design @done (15-02-17 02:05)
       ✔ Inactive Items @done (15-02-17 01:52)
       ✔ Active Items @done (15-02-17 02:04)
@@ -19,11 +19,12 @@ Bookstore:
     ✔ Add star rating to form @done (15-02-17 03:07)
 
   Controllers:
-    ☐ Add Error Flash
-      ☐ Add a Book-Creation Error @Logic @DataTransfer
-      ☐ Add useful Book-Update Messages @Logic @DataTransfer
+    ☐ Add Error Flash @Logic @DataTransfer
+      ☐ Add a Book-Creation Error
+      ☐ Add useful Book-Update Messages
 
   Star Rating:
+    ☐ Add 0.5 step rating @Logic @Discussion
     Options:
       ✔ Bootstrap Star Rating @done (15-02-15 18:19)
         // Why is event 'rating.change' fired two times after switching from id to class star-rating?
@@ -39,11 +40,11 @@ Bookstore:
 
   Discussion + Ideas:
     ☐ Reload page after CRUD actions?
-      // I'm for not doing it and highlighting the newly created book
+      // I'm for not doing it and instead scrolling down and highlighting the newly created book
     ☐ Which Star Rating?
        ☐ Empty dots for empty stars (a la iTunes)?
     ☐ Hover effect? Plugin?
     ☐ What to do with overflowing text?
-    ☐ 0.5 steps would be really good @Backend @Database
+    ☐ 0.5 steps ratings would be really good @Backend @Database
     ☐ Font + Background
     ☐ Usage of timeout?
