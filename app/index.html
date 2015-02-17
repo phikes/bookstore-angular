@@ -39,7 +39,7 @@
               <li ng-class="{active: hover}"><a href="">+ Buch</a></li>
             </ul>
 
-            <div class="add-book container img-rounded">
+            <div class="add-book container img-rounded" ng-show="hover">
               <form role="form" ng-submit="createBook()">
                 <div class="form-group">
                   <label for="title">Titel</label>
