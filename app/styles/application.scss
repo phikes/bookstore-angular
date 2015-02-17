@@ -23,18 +23,24 @@ div .add-book {
   button {
     float: right;
   }
+
+  #rating-label {
+    margin: 0px;
+  }
+
+  .star-rating.rating-active {
+    line-height: 51px;
+  }
 }
 
 .book-collection {
-  padding-left: 0px;
 
   .list {
     border-bottom: 1px solid #e5e5e5;
 
     &.item {
       width: 100%;
-      padding-top: 7px;
-      padding-bottom: 7px;
+      padding: 7px 10px;
 
       .image {
         float: left;
@@ -45,9 +51,32 @@ div .add-book {
       }
       .description {
         display: inline-block !important;
-        height: 60px;
-        padding-top: 10px;
-        margin-left: 10px;
+      }
+
+      &.inactive {
+        display: inline-block;
+
+        .description {
+          height: 60px;
+          padding: 15px 15px;
+
+          .author {
+            font-size: 14px;
+          }
+          .title {
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+
+        .bootstrap-star-rating {
+          float: right;
+          margin-top: 8px;
+
+          .rating-disabled {
+            cursor: auto;
+          }
+        }
       }
       &.active {
         padding-top: 10px;
@@ -55,8 +84,20 @@ div .add-book {
 
         .description {
           height: 160px;
-          padding-top: 20px;
-          margin-left: 20px;
+          padding: 10px 20px;
+
+          .author {
+            font-size: 14px;
+          }
+          .title {
+            display: block;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 18px;
+          }
+          .isbn {
+            color: darkgrey;
+          }
         }
 
         .remove {

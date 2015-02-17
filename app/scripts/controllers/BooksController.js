@@ -18,6 +18,10 @@ app.controller('BooksController', function($scope, $state, $stateParams, flash, 
     $('.star-rating').rating({
       min: 0, max: 5, step: 1, size: 'xs', showCaption: false, showClear: false
     });
+
+    $('.inactive-star-rating').rating({
+      min: 0, max: 5, step: 1, size: 'xs', showCaption: false, showClear: false, readonly: true
+    });
   });
 
   $scope.setActive = function(newActive) {
@@ -43,10 +47,17 @@ app.controller('BooksController', function($scope, $state, $stateParams, flash, 
   };
 });
 
-app.controller('BooksCreateController', function($scope, $state, $stateParams, flash, Book) {
+app.controller('BooksCreateController', function($scope, $state, $stateParams, flash, Book, $timeout) {
   $scope.flash = flash;
   $scope.hover = false;
-  $scope.newBook = {};
+  $scope.newBook = { rating: 3 };
+
+
+  $timeout(function() {
+    $('#create-rating').rating({
+      stars: 5, min: 0, max: 5, step: 1, size: 'md', showClear: false, showCaption: false
+    });
+  }, 500);
 
   $scope.createBook = function() {
     $('.has-error').removeClass('has-error');
