@@ -23,6 +23,9 @@ Bookstore:
       ☐ Add a Book-Creation Error
       ☐ Add useful Book-Update Messages
 
+    Refactoring:
+      ☐ Refactor Controlleres (RestfulController a la Rails)
+
   Star Rating:
     ☐ Add 0.5 step rating @Logic @Discussion
     Options:
