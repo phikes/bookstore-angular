@@ -1,17 +1,22 @@
 Bookstore:
-  ☐ Automatically include new source files @NeedHelp
+  ☐ Automatically include new source files @Autmation @NeedHelp
   ✔ Use CoffeeScript @JavaScript @CoffeeScript @CleanCode @done (15-02-17 00:13)
     ☐ CoffeeScript for BooksController @JavaScript @CoffeeScript @CleanCode @WhyYouNotWork @high
   ☐ Use HAML @CleanCode @NeedHelp
-  ☐ Choose a beautiful font @Design @Discussion @critical
-  ☐ Choose a beautiful background texture @Design @Discussion @critical
+  ✔ Choose a beautiful font @Design @Discussion @critical @done (15-02-18 15:10)
+  ☐ Choose a beautiful background texture @Design @Discussion @low
+
+ToDo:
+  ☐ Add todos from bookstore-rails
+    ☐ OpenLibrary @high
+    ☐ Dropbox @high
 
   Frontend:
     ☐ Add indicator that inactive items can be opened @Clarity @Design
-    ☐ Highlight new Book after creation @Clarity @Design @Discussion
+    ☐ Highlight new Book after creation @Clarity @Design
     ☐ Animate activation of book @Design
     ✘ Implement Bootstrap-Ui Star Rating @cancelled (15-02-15 18:31) (see below section Star Rating)
-    ☐ Hovering over a book image should change the color of the div (or body) @Design @Discussion
+    ✘ Hovering over a book image should change the color of the div (or body) @Design @Discussion @cancelled (15-02-18 15:22)
     ✔ Add some flavor to the book description @Design @done (15-02-17 02:05)
       ✔ Inactive Items @done (15-02-17 01:52)
       ✔ Active Items @done (15-02-17 02:04)
@@ -22,12 +27,11 @@ Bookstore:
     ☐ Add Error Flash @Logic @DataTransfer
       ☐ Add a Book-Creation Error
       ☐ Add useful Book-Update Messages
-
     Refactoring:
-      ☐ Refactor Controlleres (RestfulController a la Rails)
+      ☐ Refactor Controllers (RestfulController a la Rails)
 
   Star Rating:
-    ☐ Add 0.5 step rating @Logic @Discussion
+    ✘ Add 0.5 step rating @Logic @Discussion @cancelled (15-02-18 15:15)
     Options:
       ✔ Bootstrap Star Rating @done (15-02-15 18:19)
         // Why is event 'rating.change' fired two times after switching from id to class star-rating?
@@ -38,16 +42,21 @@ Bookstore:
         // PRO: Easy to update book, Icons changeable view state-on/state-off
         // CON: update on-leave?, Blue box on click
         ✔ Implement update on click instead of on-leave @done (15-02-16 20:53)
-      ☐ jQuery Raty?
+      ✘ jQuery Raty? @cancelled (15-02-18 15:06)
         // Looks simple and leightweight
 
   Discussion + Ideas:
-    ☐ Reload page after CRUD actions?
+    ✔ Reload page after CRUD actions? @done (15-02-18 15:05)
+      ☐ No book actived on startup
+      ☐ Scroll down and activate newly created book
       // I'm for not doing it and instead scrolling down and highlighting the newly created book
-    ☐ Which Star Rating?
-       ☐ Empty dots for empty stars (a la iTunes)?
-    ☐ Hover effect? Plugin?
-    ☐ What to do with overflowing text?
-    ☐ 0.5 steps ratings would be really good @Backend @Database
-    ☐ Font + Background
-    ☐ Usage of timeout? @critical
+    ✔ Which Star Rating? @done (15-02-18 14:58)
+       ☐ Conclusion: Use Bootstrap UI Rating only @Conclusion @high
+       ✘ Empty dots for empty stars (a la iTunes)? @cancelled (15-02-18 15:06)
+    ✘ Hover effect? Plugin? @cancelled (15-02-18 15:08)
+    ✔ What to do with overflowing text? @done (15-02-18 15:08)
+      ☐ Standard linebreaks
+    ✘ 0.5 steps ratings would be really good @Backend @Database @cancelled (15-02-18 15:09)
+    ✔ Font + Background @done (15-02-18 15:15)
+    ✘ Usage of timeout? @critical @cancelled (15-02-18 15:09)
+      // Switched to other rating system
