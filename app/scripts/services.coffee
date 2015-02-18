@@ -12,7 +12,7 @@ app.factory 'flash', ($rootScope) ->
 
   return {
     setMessage: (message) ->
-      queue.push(message)
+      queue.push message
       return
     getMessage: () ->
       currentMessage
