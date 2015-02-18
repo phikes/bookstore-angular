@@ -10,6 +10,8 @@ ToDo:
   ☐ Add todos from bookstore-rails
     ☐ OpenLibrary @high
     ☐ Dropbox @high
+    ☐ Make uploading custom photos
+    ☐ Open edit forms on click on attributes
 
   Frontend:
     ☐ Add indicator that inactive items can be opened @Clarity @Design
@@ -27,6 +29,7 @@ ToDo:
     ☐ Add Error Flash @Logic @DataTransfer
       ☐ Add a Book-Creation Error
       ☐ Add useful Book-Update Messages
+      ☐ Add Form Validation Errors
     Refactoring:
       ☐ Refactor Controllers (RestfulController a la Rails)
 
@@ -52,6 +55,8 @@ ToDo:
       // I'm for not doing it and instead scrolling down and highlighting the newly created book
     ✔ Which Star Rating? @done (15-02-18 14:58)
        ☐ Conclusion: Use Bootstrap UI Rating only @Conclusion @high
+       ☐ Remove selection (blue border)
+       ☐ Make it bigger
        ✘ Empty dots for empty stars (a la iTunes)? @cancelled (15-02-18 15:06)
     ✘ Hover effect? Plugin? @cancelled (15-02-18 15:08)
     ✔ What to do with overflowing text? @done (15-02-18 15:08)
