@@ -27,10 +27,6 @@ div .add-book {
   #rating-label {
     margin: 0px;
   }
-
-  .star-rating.rating-active {
-    line-height: 51px;
-  }
 }
 
 .book-collection {
@@ -66,15 +62,6 @@ div .add-book {
           .title {
             font-size: 18px;
             font-weight: bold;
-          }
-        }
-
-        .bootstrap-star-rating {
-          float: right;
-          margin-top: 8px;
-
-          .rating-disabled {
-            cursor: auto;
           }
         }
       }
