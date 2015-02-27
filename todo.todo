@@ -10,6 +10,7 @@ ToDo:
     ☐ Dropbox @high
     ☐ Make uploading custom photos
     ☐ Open edit forms on click on attributes
+    ☐ Interpolate Strings
 
   Frontend:
     ☐ Add indicator that inactive items can be opened @Clarity @Design
@@ -30,10 +31,11 @@ ToDo:
   Discussion + Ideas:
       ☐ No book actived on startup
       ☐ Scroll down and activate newly created book
-       ☐ Conclusion: Use Bootstrap UI Rating only @Conclusion @high
-       ☐ Remove selection (blue border)
-       ☐ Make it bigger
+        ☐ Conclusion: Use Bootstrap UI Rating only @Conclusion @high
+        ☐ Remove selection (blue border)
+      ☐ Make it bigger
       ☐ Standard linebreaks
+      ☐  Tags?
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
